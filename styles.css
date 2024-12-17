@@ -1,0 +1,61 @@
+/* Basic styling for your website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+#vegetables .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    #vegetables .card-container {
+        display: block;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+}
