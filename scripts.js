@@ -1,25 +1,40 @@
-// Vegetable search functionality
-function searchVegetables() {
-    const query = document.getElementById('search').value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const name = card.querySelector('h3').textContent.toLowerCase();
-        card.style.display = name.includes(query) ? 'block' : 'none';
-    });
+// Simple cart array
+let cart = [];
+
+// Add to Cart function
+function addToCart(productName, price) {
+    let product = {
+        name: productName,
+        price: price
+    };
+    cart.push(product);
+    alert(`${productName} added to your cart!`);
 }
 
-// Category filter functionality
-function filterCategory(category) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.style.display = card.classList.contains(category) ? 'block' : 'none';
-    });
-}
-
-// Price calculation functionality
-const pricePerKg = 30; // Example price
+// Calculate Price function
 function calculatePrice() {
-    const quantity = document.getElementById('quantity').value;
-    const total = quantity * pricePerKg;
-    document.getElementById('totalPrice').textContent = total;
+    let quantity = document.getElementById("quantity").value;
+    if (quantity) {
+        let pricePerKg = 3; // Example price for tomato, adjust accordingly
+        let totalPrice = pricePerKg * quantity;
+        document.getElementById("calculated-price").innerText = `Total Price: $${totalPrice}`;
+    } else {
+        document.getElementById("calculated-price").innerText = "Please enter a valid quantity.";
+    }
 }
+
+// Form submission handling (you can extend this for actual backend use)
+document.getElementById('contact-form').onsubmit = function (event) {
+    event.preventDefault();
+    alert('Thank you for your message!');
+};
+
+document.getElementById('login-form').onsubmit = function (event) {
+    event.preventDefault();
+    alert('Logging in...');
+};
+
+document.getElementById('signup-form').onsubmit = function (event) {
+    event.preventDefault();
+    alert('Signed up for updates!');
+};
