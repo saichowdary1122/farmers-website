@@ -3,145 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fresh vegetables directly from the farm. Buy the best produce for your family.">
-    <meta name="keywords" content="fresh vegetables, farmers market, organic vegetables, buy vegetables">
-    <meta name="author" content="Farmers' Vegetable Market">
-    <title>Farmers' Vegetable Market</title>
+    <title>Farmers Market</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <!-- Header with navigation -->
     <header>
-        <h1>Welcome to Farmers' Vegetable Market</h1>
-        <input type="text" id="search" placeholder="Search for vegetables..." oninput="searchVegetables()">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="categories">
-        <button onclick="filterCategory('Leafy')">Leafy Greens</button>
-        <button onclick="filterCategory('Root')">Root Vegetables</button>
-    </section>
-
-    <section id="vegetables">
-        <div class="card-container">
-            <div class="card">
-    <!-- Link the image using the folder path -->
-    <img src="images/tomato.jpg" alt="Fresh Tomato" class="card-image">
-    <div class="card-content">
-        <h3>Fresh Tomato</h3>
-        <p>Price: $3 per kg</p>
-        <button>Add to Cart</button>
-    </div>
-</div>
-
-            <div class="card leafy">
-        <img src="https://via.placeholder.com/200x120?text=Spinach" alt="Spinach">
-        <h3>Spinach</h3>
-        <p>Price: ₹40/kg</p>
-    </div>
-    <div class="card root">
-        <img src="https://via.placeholder.com/200x120?text=Carrot" alt="Carrot">
-        <h3>Carrot</h3>
-        <p>Price: ₹50/kg</p>
-    </div>
-    <div class="card leafy">
-        <img src="https://via.placeholder.com/200x120?text=Cabbage" alt="Cabbage">
-        <h3>Cabbage</h3>
-        <p>Price: ₹30/kg</p>
-    </div>
-    <div class="card root">
-        <img src="https://via.placeholder.com/200x120?text=Potato" alt="Potato">
-        <h3>Potato</h3>
-        <p>Price: ₹20/kg</p>
-    </div>
-    <div class="card leafy">
-        <img src="https://via.placeholder.com/200x120?text=Lettuce" alt="Lettuce">
-        <h3>Lettuce</h3>
-        <p>Price: ₹35/kg</p>
-    </div>
-    <div class="card root">
-        <img src="https://via.placeholder.com/200x120?text=Onion" alt="Onion">
-        <h3>Onion</h3>
-        <p>Price: ₹25/kg</p>
-    </div>
-    <div class="card leafy">
-        <img src="https://via.placeholder.com/200x120?text=Broccoli" alt="Broccoli">
-        <h3>Broccoli</h3>
-        <p>Price: ₹60/kg</p>
-    </div>
-</div>
-    </section>
-
-    <section id="testimonials">
-    <h2>What Our Farmers Say</h2>
-    <div class="testimonial-container">
-        <div class="testimonial-card">
-            <p>"This platform has helped me reach more customers than I ever could on my own. The process is simple and the support is great!"</p>
-            <h4>- Ramesh, Farmer</h4>
+    <!-- Product section -->
+    <section id="products">
+        <h2>Our Fresh Vegetables</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="images/tomato.jpg" alt="Fresh Tomato" class="product-image">
+                <h3>Fresh Tomato</h3>
+                <p>Price: $3 per kg</p>
+                <button onclick="addToCart('Fresh Tomato', 3)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/carrot.jpg" alt="Fresh Carrot" class="product-image">
+                <h3>Fresh Carrot</h3>
+                <p>Price: $2 per kg</p>
+                <button onclick="addToCart('Fresh Carrot', 2)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/potato.jpg" alt="Fresh Potato" class="product-image">
+                <h3>Fresh Potato</h3>
+                <p>Price: $1.5 per kg</p>
+                <button onclick="addToCart('Fresh Potato', 1.5)">Add to Cart</button>
+            </div>
         </div>
-        <div class="testimonial-card">
-            <p>"I love how easy it is to list my fresh produce online and connect directly with buyers. It’s a game-changer for small farmers like me."</p>
-            <h4>- Priya, Farmer</h4>
-        </div>
-        <div class="testimonial-card">
-            <p>"This website made my vegetable sales so much easier, and I’m proud to be part of a platform that promotes local farmers."</p>
-            <h4>- Raj, Farmer</h4>
-        </div>
-    </div>
-</section>
 
-    <section id="calculator">
+        <!-- Price Calculator -->
         <h2>Calculate Your Price</h2>
-        <input type="number" id="quantity" placeholder="Enter quantity (kg)" onchange="calculatePrice()">
-        <p>Total Price: ₹<span id="totalPrice">0</span></p>
+        <input type="number" id="quantity" placeholder="Enter quantity (kg)">
+        <button onclick="calculatePrice()">Calculate Price</button>
+        <p id="calculated-price"></p>
     </section>
 
-<!-- Farmer Resources Section -->
-<section id="resources">
-    <h2>Farmer Resources</h2>
-    <div class="resource-container">
-        <div class="resource-card">
-            <h4>Crop Rotation Tips</h4>
-            <p>Learn how crop rotation can boost your yield and maintain healthy soil.</p>
-            <a href="#" class="resource-link">Read More</a>
-        </div>
-        <div class="resource-card">
-            <h4>Organic Farming Guide</h4>
-            <p>Explore the benefits of organic farming and how to make the transition.</p>
-            <a href="#" class="resource-link">Read More</a>
-        </div>
-        <div class="resource-card">
-            <h4>Market Trends</h4>
-            <p>Get insights into current vegetable market trends and pricing.</p>
-            <a href="#" class="resource-link">Read More</a>
-        </div>
-    </div>
-</section>
-    
+    <!-- Contact Us -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/your-email-id" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    <section id="newsletter">
-        <h2>Sign up for the latest updates!</h2>
-        <form action="https://formspree.io/f/your-email-id" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
+    <!-- User Login -->
+    <section id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
         </form>
     </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
-    </footer>
+    <!-- Sign Up Form -->
+    <section id="signup">
+        <h2>Sign Up for the Latest Updates!</h2>
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
