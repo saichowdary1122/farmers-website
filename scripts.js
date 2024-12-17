@@ -1,40 +1,46 @@
-// Simple cart array
-let cart = [];
+e (script.js)
+Save this as script.js in the same directory as your HTML file.
 
-// Add to Cart function
+javascript
+Copy code
+// Add to Cart Functionality
 function addToCart(productName, price) {
-    let product = {
-        name: productName,
-        price: price
-    };
-    cart.push(product);
-    alert(`${productName} added to your cart!`);
+    alert(`${productName} added to cart at $${price}/kg.`);
 }
 
-// Calculate Price function
+// Price Calculator
 function calculatePrice() {
-    let quantity = document.getElementById("quantity").value;
-    if (quantity) {
-        let pricePerKg = 3; // Example price for tomato, adjust accordingly
-        let totalPrice = pricePerKg * quantity;
-        document.getElementById("calculated-price").innerText = `Total Price: $${totalPrice}`;
+    const select = document.getElementById('vegetable-select');
+    const quantityInput = document.getElementById('quantity');
+    const priceDisplay = document.getElementById('calculated-price');
+
+    const selectedOption = select.value;
+    const [vegetable, pricePerKg] = selectedOption.split('-');
+    const quantity = parseFloat(quantityInput.value);
+
+    if (quantity > 0) {
+        const totalPrice = quantity * parseFloat(pricePerKg);
+        priceDisplay.textContent = `Total price for ${quantity}kg of ${vegetable}: $${totalPrice.toFixed(2)}`;
     } else {
-        document.getElementById("calculated-price").innerText = "Please enter a valid quantity.";
+        priceDisplay.textContent = 'Please enter a valid quantity.';
     }
 }
 
-// Form submission handling (you can extend this for actual backend use)
-document.getElementById('contact-form').onsubmit = function (event) {
+// Form Validation
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    alert('Thank you for your message!');
-};
+    alert('Message sent! Thank you for contacting us.');
+    this.reset();
+});
 
-document.getElementById('login-form').onsubmit = function (event) {
+document.getElementById('signup-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    alert('Logging in...');
-};
+    alert('Thank you for signing up for updates!');
+    this.reset();
+});
 
-document.getElementById('signup-form').onsubmit = function (event) {
+document.getElementById('login-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    alert('Signed up for updates!');
-};
+    alert('Login successful!');
+    this.reset();
+});
