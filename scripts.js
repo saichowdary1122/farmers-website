@@ -1,8 +1,3 @@
-e (script.js)
-Save this as script.js in the same directory as your HTML file.
-
-javascript
-Copy code
 // Add to Cart Functionality
 function addToCart(productName, price) {
     alert(`${productName} added to cart at $${price}/kg.`);
