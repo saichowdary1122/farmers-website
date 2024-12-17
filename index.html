@@ -3,55 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmers Market</title>
+    <title>Farmers' Market - Helping Farmers Sell Vegetables</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header with navigation -->
+    <!-- Header -->
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#price-calculator">Price Calculator</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#login">Login</a></li>
                 <li><a href="#signup">Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Product section -->
+    <!-- Hero Section -->
+    <section id="home">
+        <h1>Welcome to Farmers' Market</h1>
+        <p>Your one-stop solution for fresh, organic vegetables directly from farmers.</p>
+    </section>
+
+    <!-- Products Section -->
     <section id="products">
         <h2>Our Fresh Vegetables</h2>
         <div class="product-container">
             <div class="product-card">
-                <img src="images/tomato.jpg" alt="Fresh Tomato" class="product-image">
-                <h3>Fresh Tomato</h3>
-                <p>Price: $3 per kg</p>
-                <button onclick="addToCart('Fresh Tomato', 3)">Add to Cart</button>
+                <img src="images/tomato.jpg" alt="Tomato">
+                <h3>Tomato</h3>
+                <p>Price: $3/kg</p>
+                <button onclick="addToCart('Tomato', 3)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/carrot.jpg" alt="Fresh Carrot" class="product-image">
-                <h3>Fresh Carrot</h3>
-                <p>Price: $2 per kg</p>
-                <button onclick="addToCart('Fresh Carrot', 2)">Add to Cart</button>
+                <img src="images/carrot.jpg" alt="Carrot">
+                <h3>Carrot</h3>
+                <p>Price: $2/kg</p>
+                <button onclick="addToCart('Carrot', 2)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/potato.jpg" alt="Fresh Potato" class="product-image">
-                <h3>Fresh Potato</h3>
-                <p>Price: $1.5 per kg</p>
-                <button onclick="addToCart('Fresh Potato', 1.5)">Add to Cart</button>
+                <img src="images/potato.jpg" alt="Potato">
+                <h3>Potato</h3>
+                <p>Price: $1.5/kg</p>
+                <button onclick="addToCart('Potato', 1.5)">Add to Cart</button>
             </div>
         </div>
+    </section>
 
-        <!-- Price Calculator -->
+    <!-- Price Calculator Section -->
+    <section id="price-calculator">
         <h2>Calculate Your Price</h2>
-        <input type="number" id="quantity" placeholder="Enter quantity (kg)">
-        <button onclick="calculatePrice()">Calculate Price</button>
+        <p>Select a vegetable and enter the quantity:</p>
+        <select id="vegetable-select">
+            <option value="Tomato-3">Tomato ($3/kg)</option>
+            <option value="Carrot-2">Carrot ($2/kg)</option>
+            <option value="Potato-1.5">Potato ($1.5/kg)</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Enter quantity in kg">
+        <button onclick="calculatePrice()">Calculate</button>
         <p id="calculated-price"></p>
     </section>
 
-    <!-- Contact Us -->
+    <!-- Farmer Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Farmers Say About Us</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"This platform has changed my life! I can now sell my vegetables directly to customers without any middlemen."</p>
+                <h4>- Ramesh, Farmer</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Thanks to Farmers' Market, I have increased my income and gained loyal customers who trust my produce."</p>
+                <h4>- Priya, Organic Farmer</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Selling vegetables has never been this easy. The support team is fantastic and always ready to help."</p>
+                <h4>- Arjun, Vegetable Grower</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <form id="contact-form">
@@ -62,7 +98,7 @@
         </form>
     </section>
 
-    <!-- User Login -->
+    <!-- Login Section -->
     <section id="login">
         <h2>Login</h2>
         <form id="login-form">
@@ -72,15 +108,13 @@
         </form>
     </section>
 
-    <!-- Sign Up Form -->
+    <!-- Sign Up Section -->
     <section id="signup">
-        <h2>Sign Up for the Latest Updates!</h2>
+        <h2>Sign Up for Updates</h2>
         <form id="signup-form">
             <input type="email" id="signup-email" placeholder="Email" required>
             <button type="submit">Sign Up</button>
         </form>
     </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
