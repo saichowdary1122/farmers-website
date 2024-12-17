@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers' Vegetable Market</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .vegetable-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form textarea, form button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #2c3e50;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farmers' Vegetable Market</h1>
+        <p>Fresh Vegetables Direct from Local Farmers</p>
+    </header>
+
+    <nav>
+        <a href="#vegetables">Available Vegetables</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <!-- Vegetable Section -->
+        <section id="vegetables">
+            <h2>Available Vegetables</h2>
+            <div class="vegetable-list">
+                <div class="card">
+                    <img src="https://via.placeholder.com/250" alt="Tomatoes">
+                    <h3>Tomatoes</h3>
+                    <p>Price: ₹30/kg</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/250" alt="Cabbage">
+                    <h3>Cabbage</h3>
+                    <p>Price: ₹20/kg</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/250" alt="Carrots">
+                    <h3>Carrots</h3>
+                    <p>Price: ₹40/kg</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/250" alt="Onions">
+                    <h3>Onions</h3>
+                    <p>Price: ₹25/kg</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Farmers' Vegetable Market. All rights reserved.</p>
+    </footer>
+</body>
+</html>
