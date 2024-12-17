@@ -1,120 +1,138 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: url('images/background.jpg'); 
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Header and Navigation */
+/* Header Navigation */
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background: #00796b;
+    color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 
-nav ul {
+header ul {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
-nav ul li {
+header ul li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+header ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2em;
+    font-weight: bold;
 }
 
-/* Product Section */
-#products {
-    text-align: center;
-    padding: 50px 0;
+header ul li a:hover {
+    text-decoration: underline;
 }
 
+/* Section Styles */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #00796b;
+}
+
+/* Product Cards */
 .product-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    gap: 30px;
 }
 
 .product-card {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
     text-align: center;
+    width: 200px;
+    background: #f4f4f4;
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .product-card button {
-    background-color: #28a745;
+    background: #00796b;
+    color: #fff;
     border: none;
-    color: white;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 10px 15px;
     cursor: pointer;
-    font-size: 1em;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .product-card button:hover {
-    background-color: #218838;
+    background: #004d40;
 }
 
-/* Contact Form */
-#contact {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px 0;
+/* Testimonials */
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial {
+    max-width: 300px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 5px;
     text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-form {
-    width: 60%;
-    margin: 0 auto;
-}
-
-input, textarea {
+/* Forms */
+form input, form textarea, form select, form button {
+    display: block;
     width: 100%;
-    padding: 10px;
     margin: 10px 0;
-    font-size: 1.1em;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    font-size: 1.1em;
+form button {
+    background: #00796b;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+form button:hover {
+    background: #004d40;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .product-container {
+    .product-container, .testimonial-container {
         flex-direction: column;
         align-items: center;
     }
-    form {
-        width: 80%;
+
+    header ul li {
+        display: block;
+        margin: 10px 0;
     }
 }
